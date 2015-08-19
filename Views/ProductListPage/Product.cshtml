@@ -1,0 +1,30 @@
+﻿@model DemoSite.Models.ViewModels.ProductListPageViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="left-menu col-lg-2">
+        <div class="list-group">
+            <span class="list-group-item active">Products</span>
+            @foreach (var product in Model.Products) {
+                <a href="@string.Format("{0}{1}", Model.CurrentPage.PageUrl, product.Id)" class="list-group-item">@product.Name</a>
+            }
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <h1>@Model.SelectedProduct.Name</h1>
+        <p class="preamble">@Model.SelectedProduct.Description</p>
+        <p>
+            This is no ordinary page. Although it has it's own URL all this information is kept in another system. This page is generated from a fake product database
+            using the <code>IPageExtender</code> functionality. This is a great way to present information without the need to store them in two places.
+        </p>
+        <p>
+            We can always access the ancestor page (the one implementing the extender) by using <code>CurrentPage</code>. In this case our ancestor is <b>@Model.CurrentPage.PageName</b>.
+        </p>
+        <p>
+            To learn more about how to extend your pages with content from other systems <a href="http://kaliko.com/cms/get-started/page-extenders/">learn about page extenders here</a>.
+        </p>
+    </div>
+</div>

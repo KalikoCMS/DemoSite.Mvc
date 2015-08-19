@@ -1,0 +1,36 @@
+﻿@model DemoSite.Models.ViewModels.PageViewModel<DemoSite.Models.Pages.ArticlePage>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/BreadCrumbsView.cshtml", Model)
+
+<div class="row">
+    <div class="left-menu col-lg-3">
+        
+        @* TODO: Implement through MVC <cms:MenuTree ID="LeftMenu" AutoBind="True" runat="server">
+            <startitemtemplate><li></startitemtemplate>
+            <enditemtemplate></li></enditemtemplate>
+            <newleveltemplate><ul class="nav nav-pills nav-stacked"></newleveltemplate>
+            <endleveltemplate></ul></endleveltemplate>
+            <itemtemplate>
+                <a href="<%#Container.CurrentPage.PageUrl %>"><%#Container.CurrentPage.PageName %></a>
+            </itemtemplate>
+            <selecteditemtemplate>
+                <a href="<%#Container.CurrentPage.PageUrl %>" class="active"><%#Container.CurrentPage.PageName %></a>
+            </selecteditemtemplate>
+        </cms:MenuTree>*@
+    </div>
+    <div class="col-lg-9">
+        @Model.CurrentPage.TopImage.ToHtml()
+        <h1>@Model.CurrentPage.Headline</h1>
+        <p class="preamble">@Model.CurrentPage.Preamble</p>
+        @Model.CurrentPage.MainBody
+        @if (Model.CurrentPage.Tags.Tags.Count > 0) { 
+            <p class="tags">
+                This article was tagged with: <strong>@Model.CurrentPage.Tags</strong>
+            </p>
+        }
+    </div>
+</div>

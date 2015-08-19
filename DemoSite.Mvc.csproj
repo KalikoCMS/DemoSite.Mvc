@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5CA4886A-F603-4624-A4E6-CC845DDD5E82}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DemoSite</RootNamespace>
+    <AssemblyName>DemoSite.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <NuGetPackageImportStamp>49194342</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.Identity.DataAccess, Version=2.1.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AspNet.Identity.DataAccess.2.1.0.6\lib\AspNet.Identity.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="fastjson, Version=2.1.0.0, Culture=neutral, PublicKeyToken=6b75a806b86095cd, processorArchitecture=MSIL">
+      <HintPath>packages\fastJSON.2.1.14.0\lib\net40\fastjson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kaliko.ImageLibrary, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ImageLibrary.2.0.5\lib\net45\Kaliko.ImageLibrary.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kaliko.Logger, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Kaliko.Logger.1.1.1\lib\Kaliko.Logger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KalikoCMS.Admin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.0.0\lib\KalikoCMS.Admin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KalikoCMS.Engine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.0.0\lib\KalikoCMS.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KalikoCMS.Identity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Identity.1.0.0\lib\KalikoCMS.Identity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KalikoCMS.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Mvc.1.0.0\lib\KalikoCMS.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KalikoCMS.Search, Version=3.0.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Search.1.0.0\lib\KalikoCMS.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="KalikoSearch, Version=3.0.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Search.1.0.0\lib\KalikoSearch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Analyzers, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Core, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.FastVectorHighlighter, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.FastVectorHighlighter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Highlighter, Version=2.3.2.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Memory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Memory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Queries, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Queries.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Regex, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Regex.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SimpleFacetedSearch, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SimpleFacetedSearch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Snowball, Version=2.0.0.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Snowball.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Core.1.0.97.0\lib\net45\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.OpenAccess, Version=2015.2.624.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
+      <HintPath>packages\Telerik.DataAccess.Core.2015.2.624.1\lib\net40\Telerik.OpenAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2015.2.624.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
+      <HintPath>packages\Telerik.DataAccess.Core.2015.2.624.1\lib\net40\Telerik.OpenAccess.35.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.40.Extensions, Version=2015.2.624.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
+      <HintPath>packages\Telerik.DataAccess.Core.2015.2.624.1\lib\net40\Telerik.OpenAccess.40.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.OpenAccess.Runtime, Version=2015.2.624.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL">
+      <HintPath>packages\Telerik.DataAccess.Core.2015.2.624.1\lib\net40\Telerik.OpenAccess.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Assets\fonts\hind\OFL.txt" />
+    <Content Include="Admin\Assets\fonts\hind\webfont-hind.css" />
+    <Content Include="Admin\Assets\images\defaultpagetype.png" />
+    <Content Include="Admin\Assets\images\error-image.jpg" />
+    <Content Include="Admin\Assets\images\loading.gif" />
+    <Content Include="Admin\Assets\images\logo.png" />
+    <Content Include="Admin\Assets\images\no-image.jpg" />
+    <Content Include="Admin\Assets\images\progressbar.gif" />
+    <Content Include="Admin\Assets\js\kalikocms.admin.core.min.js" />
+    <Content Include="Admin\Assets\js\kalikocms.admin.editor.min.js" />
+    <Content Include="Admin\Assets\js\kalikocms.admin.fileupload.min.js" />
+    <Content Include="Admin\Assets\js\kalikocms.admin.imageeditor.min.js" />
+    <Content Include="Admin\Assets\js\kalikocms.admin.js" />
+    <Content Include="Admin\Assets\js\kalikocms.admin.taginput.min.js" />
+    <Content Include="Admin\Assets\themes\dakota\theme.js" />
+    <Content Include="Admin\Assets\themes\dakota\theme.min.css" />
+    <Content Include="Admin\Assets\vendors\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\Assets\vendors\html5shiv.min.js" />
+    <Content Include="Admin\Assets\vendors\jquery\css\jquery.fileupload-ui.css" />
+    <Content Include="Admin\Assets\vendors\jquery\css\jquery.jcrop.min.css" />
+    <Content Include="Admin\Assets\vendors\jquery\js\jquery-1.10.2.min.js" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Admin\Assets\vendors\tinymce\tinymce.license.txt" />
+    <Content Include="Admin\Content\Default.aspx" />
+    <Content Include="Admin\Content\Dialogs\EditCollectionPropertyDialog.aspx" />
+    <Content Include="Admin\Content\Dialogs\EditImageDialog.aspx" />
+    <Content Include="Admin\Content\Dialogs\PageVersionDialog.aspx" />
+    <Content Include="Admin\Content\Dialogs\SelectFileDialog.aspx" />
+    <Content Include="Admin\Content\Dialogs\SelectLinkDialog.aspx" />
+    <Content Include="Admin\Content\Dialogs\SelectPageDialog.aspx" />
+    <Content Include="Admin\Content\Dialogs\SelectPagetypeDialog.aspx" />
+    <Content Include="Admin\Content\EditPage.aspx" />
+    <Content Include="Admin\Content\PageTree\PageTreeControl.ascx" />
+    <Content Include="Admin\Content\PropertyType\BooleanPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\CollectionPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\CollectionPropertyEditor.js" />
+    <Content Include="Admin\Content\PropertyType\DateTimePropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\FilePropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\FilePropertyEditor.js" />
+    <Content Include="Admin\Content\PropertyType\HtmlPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\ImagePropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\ImagePropertyEditor.js" />
+    <Content Include="Admin\Content\PropertyType\LinkPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\LinkPropertyEditor.js" />
+    <Content Include="Admin\Content\PropertyType\MarkdownPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\NumericPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\PageLinkPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\PageLinkPropertyEditor.js" />
+    <Content Include="Admin\Content\PropertyType\StringPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\TagPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\TextPropertyEditor.ascx" />
+    <Content Include="Admin\Content\PropertyType\UniversalDateTimePropertyEditor.ascx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\Identity\CreateRole.aspx" />
+    <Content Include="Admin\Identity\CreateUser.aspx" />
+    <Content Include="Admin\Identity\Default.aspx" />
+    <Content Include="Admin\Identity\DeleteRole.aspx" />
+    <Content Include="Admin\Identity\DeleteUser.aspx" />
+    <Content Include="Admin\Identity\EditRole.aspx" />
+    <Content Include="Admin\Identity\EditUser.aspx" />
+    <Content Include="Admin\Identity\IdentityMenu.ascx" />
+    <Content Include="Admin\Identity\Roles.aspx" />
+    <Content Include="Admin\Identity\Users.aspx" />
+    <Content Include="Admin\Search\Default.aspx" />
+    <Content Include="Admin\Templates\Units\SideNavigation.ascx" />
+    <Content Include="Admin\Templates\Units\TopNavigation.ascx" />
+    <Content Include="App_Data\empty.txt" />
+    <Content Include="Assets\Css\DemoSite.css" />
+    <Content Include="Assets\Images\articlepage.png" />
+    <Content Include="Assets\Images\newslistpage.png" />
+    <Content Include="Assets\Images\newspage.png" />
+    <Content Include="Assets\Images\productlist.png" />
+    <Content Include="Assets\Images\searchpage.png" />
+    <Content Include="Assets\Images\startpage.png" />
+    <Content Include="Files\Images\sample.jpg" />
+    <Content Include="Files\Readme.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="ImageCache\readme.txt" />
+    <Content Include="Business\PropertyTypes\FeaturePropertyEditor.ascx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="SetupAdminAccount.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SQLiteAssemblyBinding.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Business\FakeStore\FakeProductDatabase.cs" />
+    <Compile Include="Business\FakeStore\Product.cs" />
+    <Compile Include="Business\ViewModelBuilders\NewsListPageViewModelBuilder - Copy.cs" />
+    <Compile Include="Business\ViewModelBuilders\NewsListPageViewModelBuilder.cs" />
+    <Compile Include="Business\ViewModelBuilders\ProductListPageViewModelBuilder.cs" />
+    <Compile Include="Business\ViewModelBuilders\PageViewModelBuilder.cs" />
+    <Compile Include="Business\ViewModelBuilders\NewsPageViewModelBuilder.cs" />
+    <Compile Include="Controllers\ArticlePageController.cs" />
+    <Compile Include="Controllers\NewsListPageController.cs" />
+    <Compile Include="Controllers\NewsPageController.cs" />
+    <Compile Include="Controllers\ProductListPageController.cs" />
+    <Compile Include="Controllers\SearchPageController.cs" />
+    <Compile Include="Controllers\StartPageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Pages\ArticlePage.cs" />
+    <Compile Include="Models\Pages\NewsListPage.cs" />
+    <Compile Include="Models\Pages\NewsPage.cs" />
+    <Compile Include="Models\Pages\ProductListPage.cs" />
+    <Compile Include="Models\Pages\SearchPage.cs" />
+    <Compile Include="Models\Pages\StartPage.cs" />
+    <Compile Include="Models\ViewModels\NewsListPageViewModel - Copy.cs" />
+    <Compile Include="Models\ViewModels\ProductListPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\NewsPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\IPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\NewsListPageViewModel.cs" />
+    <Compile Include="Models\ViewModels\PageViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Business\PropertyTypes\FeaturePropertyEditor.ascx.cs">
+      <DependentUpon>FeaturePropertyEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Business\PropertyTypes\FeaturePropertyEditor.ascx.designer.cs">
+      <DependentUpon>FeaturePropertyEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Business\PropertyTypes\FeaturePropertyType.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="App_Data\kalikocms.db3" />
+    <Content Include="Views\StartPage\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\ArticlePage\Index.cshtml" />
+    <Content Include="Views\NewsListPage\Index.cshtml" />
+    <Content Include="Views\NewsPage\Index.cshtml" />
+    <Content Include="Views\SearchPage\Index.cshtml" />
+    <Content Include="Views\Partials\BreadcrumbsView.cshtml" />
+    <Content Include="Admin\Templates\MasterPages\Base.Master" />
+    <Content Include="Admin\Templates\MasterPages\Admin.Master" />
+    <Content Include="Admin\Handlers\MarkdownHandler.ashx" />
+    <Content Include="Admin\Handlers\FileHandler.ashx" />
+    <Content Include="Admin\Content\PageTree\JQueryTreeContent.ashx" />
+    <Content Include="Admin\Content\Dialogs\Dialog.Master" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Admin\Assets\vendors\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin\Assets\vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin\Assets\vendors\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\Assets\vendors\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Admin\Assets\images\Thumbnail.ashx" />
+    <Content Include="Admin\Assets\fonts\hind\hind-semibold-webfont.woff" />
+    <Content Include="Admin\Assets\fonts\hind\hind-semibold-webfont.ttf" />
+    <Content Include="Admin\Assets\fonts\hind\hind-semibold-webfont.eot" />
+    <Content Include="Admin\Assets\fonts\hind\hind-regular-webfont.woff" />
+    <Content Include="Admin\Assets\fonts\hind\hind-regular-webfont.ttf" />
+    <Content Include="Admin\Assets\fonts\hind\hind-regular-webfont.eot" />
+    <Content Include="Admin\Assets\fonts\hind\hind-medium-webfont.woff" />
+    <Content Include="Admin\Assets\fonts\hind\hind-medium-webfont.ttf" />
+    <Content Include="Admin\Assets\fonts\hind\hind-medium-webfont.eot" />
+    <Content Include="Admin\Assets\fonts\hind\hind-light-webfont.woff" />
+    <Content Include="Admin\Assets\fonts\hind\hind-light-webfont.ttf" />
+    <Content Include="Admin\Assets\fonts\hind\hind-light-webfont.eot" />
+    <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.woff" />
+    <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.ttf" />
+    <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.eot" />
+    <Content Include="Views\ProductListPage\Index.cshtml" />
+    <Content Include="Views\ProductListPage\Product.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Js\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52260</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52260/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="packages\System.Data.SQLite.Core.1.0.97.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.97.0\build\net45\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.97.0\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.97.0\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

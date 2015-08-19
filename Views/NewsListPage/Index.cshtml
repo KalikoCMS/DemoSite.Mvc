@@ -1,0 +1,36 @@
+﻿@model DemoSite.Models.ViewModels.NewsListPageViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/BreadCrumbsView.cshtml", Model)
+
+<h1>@Model.CurrentPage.PageName</h1>
+<div class="row">
+    <div class="col-lg-9">
+        <!-- TODO: Page the result -->
+        <ul class="list-unstyled">
+            @foreach (var newsPage in Model.News)
+            {
+                <li>
+                    <h2><a href="@newsPage.PageUrl">@newsPage.PageName</a></h2>
+                    <p>
+                        (@newsPage.StartPublish.Value.ToShortDateString())
+                        @newsPage.Property["Preamble"]
+                        <a href="@newsPage.PageUrl">Read more</a>
+                    </p>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-lg-3">
+        <div class="list-group">
+            <span class="list-group-item active">Archive</span>
+            @foreach (var newsHolder in Model.NewsHolders)
+            {
+                <a href="@newsHolder.PageUrl" class="list-group-item">@newsHolder.PageName</a>
+            }
+        </div>
+    </div>
+</div>

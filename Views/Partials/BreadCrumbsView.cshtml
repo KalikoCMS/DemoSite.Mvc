@@ -1,0 +1,13 @@
+﻿@model DemoSite.Models.ViewModels.IPageViewModel<KalikoCMS.Core.CmsPage>
+
+@if (Model.CurrentPage.ParentPath.Count == 0) {
+    // If no parents, don't render this
+    return;
+}
+
+<ol class="breadcrumb">
+    @foreach (var page in Model.CurrentPage.ParentPath.Reverse())
+    {
+        <li><a href="@page.PageUrl">@page.PageName</a></li>
+    }
+</ol>

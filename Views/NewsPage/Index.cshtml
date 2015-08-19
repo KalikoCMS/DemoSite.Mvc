@@ -1,0 +1,23 @@
+﻿@model DemoSite.Models.ViewModels.NewsPageViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/BreadCrumbsView.cshtml", Model)
+
+<div class="row">
+    <div class="col-lg-9">
+        <h1>@Model.CurrentPage.Headline</h1>
+        <p class="preamble">@Model.CurrentPage.Preamble</p>
+        @Model.CurrentPage.MainBody
+    </div>
+    <div class="col-lg-3">
+        <h2>Related news</h2>
+        <ul class="list-unstyled related">
+            @foreach (var searchHit in Model.RelatedNews.Hits) {
+                <li><a href="@searchHit.Path">@searchHit.Title</a></li>
+            }
+        </ul>
+    </div>
+</div>

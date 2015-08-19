@@ -1,0 +1,22 @@
+﻿@model DemoSite.Models.ViewModels.ProductListPageViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-9">
+        <h1>@Model.CurrentPage.Headline</h1>
+
+        @Model.CurrentPage.MainBody
+        
+        <ul class="list-unstyled products">
+            @foreach (var product in Model.Products) {
+                <li>
+                    <h2><a href="@string.Format("{0}{1}/", Model.CurrentPage.PageUrl, product.Id)">@product.Name</a></h2>
+                    <p>@product.Description</p>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
