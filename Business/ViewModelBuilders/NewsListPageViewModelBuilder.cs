@@ -6,13 +6,17 @@
     using KalikoCMS.Core.Collections;
     using Models.Pages;
     using Models.ViewModels;
+    using PagedList;
 
     public class NewsListPageViewModelBuilder {
-        public static NewsListPageViewModel Create(NewsListPage currentPage) {
+        public const int PageSize = 10;
+
+        public static NewsListPageViewModel Create(NewsListPage currentPage, int page) {
             var model= new NewsListPageViewModel(currentPage);
             PageViewModelBuilder.SetBaseProperties(model);
-            model.News = GetNews(currentPage);
+            model.News = new PagedList<CmsPage>(GetNews(currentPage), page, PageSize);
             model.NewsHolders = GetNewsHolders(currentPage);
+            model.Page = page;
             return model;
         }
 

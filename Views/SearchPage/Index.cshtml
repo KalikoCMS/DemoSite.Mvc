@@ -1,8 +1,70 @@
-﻿@model DemoSite.Models.ViewModels.PageViewModel<DemoSite.Models.Pages.SearchPage>
+﻿@using DemoSite.Business.ViewModelBuilders
+@using OpenAccessRuntime.util.classhelper
+@using PagedList.Mvc
+@model DemoSite.Models.ViewModels.SearchPageViewModel
 
 @{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>title</h2>
+<div class="row">
+    <div class="col-lg-6 col-lg-push-3">
+        <div id="searchfield" class="input-group">
+            @Html.TextBox("query", Model.Query, new { @class = "form-control" })
+            <span class="input-group-btn">
+                <button id="searchButton" class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i> Search</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="searchresults">
+    @if (!string.IsNullOrEmpty(Model.Query))
+    {
+        if (Model.SearchResult.Any())
+        {
+            foreach (var searchHit in Model.SearchResult)
+            {
+                <p>
+                    <a href="@searchHit.Path">@searchHit.Title</a><br />
+                    <span class="url">@searchHit.Path</span><!-- [@searchHit.Score]--><br />
+                    @if (!string.IsNullOrEmpty(searchHit.Excerpt)) {
+                        @Html.Raw(searchHit.Excerpt)<br/>
+                    }
+                    else if (searchHit.MetaData.ContainsKey("summary") && !string.IsNullOrEmpty(searchHit.MetaData["summary"])) {
+                        @Html.Raw(searchHit.MetaData["summary"])<br />
+                    }
+                    <span class="label label-warning">@searchHit.MetaData["category"]</span>
+                </p>
+            }
+            @Html.PagedListPager(Model.SearchResult, page => Url.Action(null, Model.CurrentPage.PageUrl.ToString().TrimStart('/'), new { q = Model.Query, page }))
+            <p>Showing @Model.SearchResult.FirstItemOnPage to @Model.SearchResult.LastItemOnPage of @Model.SearchResult.TotalItemCount search hits</p>
+
+        }
+        else
+        {
+            <p><i>No pages were found matching the search criteria.</i></p>
+        }
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#searchButton").click(doSearch);
+
+        $('#query').keypress(function (event) {
+
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                doSearch();
+                return false;
+            }
+        });
+
+        function doSearch() {
+            var query = $("#query").val();
+            var url = document.location.pathname + "?q=" + escape(query);
+            document.location = url;
+        };
+    });
+</script>

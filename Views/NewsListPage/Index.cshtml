@@ -1,4 +1,6 @@
-﻿@model DemoSite.Models.ViewModels.NewsListPageViewModel
+﻿@using DemoSite.Business.ViewModelBuilders
+@using PagedList.Mvc
+@model DemoSite.Models.ViewModels.NewsListPageViewModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,7 +11,6 @@
 <h1>@Model.CurrentPage.PageName</h1>
 <div class="row">
     <div class="col-lg-9">
-        <!-- TODO: Page the result -->
         <ul class="list-unstyled">
             @foreach (var newsPage in Model.News)
             {
@@ -23,6 +24,10 @@
                 </li>
             }
         </ul>
+        
+        @* Note: null controller reference will be fixed in 1.0.1 *@
+        @Html.PagedListPager(Model.News, page => Url.Action(null, Model.CurrentPage.PageUrl.ToString().TrimStart('/'), new { page, pageSize = NewsListPageViewModelBuilder.PageSize }))
+        <p>Showing @Model.News.FirstItemOnPage to @Model.News.LastItemOnPage of @Model.News.TotalItemCount news</p>
     </div>
     <div class="col-lg-3">
         <div class="list-group">
