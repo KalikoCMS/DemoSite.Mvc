@@ -41,10 +41,10 @@
 
             // Check if this was a called for a valid product in our product database
             if (FakeProductDatabase.IsValidProduct(remainingSegments[0])) {
-                // It was, so lets execute ProductPage.aspx. By attaching the pageId 
-                // as id in the querystring and letting ProductPage inherit from 
-                // PageTemplate we can access all properties from the "mother page".
-                // TODO: Uppdatera beskrivning
+                // It was, so lets execute the Product action in our page controller
+                // (ProductListPageController). The product list page will be passed 
+                // to the action by default, but we also need to attach the product id.
+                // This is done by adding it to a dictionary of route values.
                 var page = PageFactory.GetPage(pageId);
                 var additionalRouteData = new Dictionary<string, object> {{"productId", remainingSegments[0]}};
 
