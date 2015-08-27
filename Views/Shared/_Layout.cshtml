@@ -37,14 +37,11 @@
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    @foreach (var page in Model.TopMenu)
-                    {
-                        if (Model.CurrentPage.PageId == page.PageId || Model.CurrentPage.ParentPath.Contains(page.PageId))
-                        {
+                    @foreach (var page in Model.TopMenu) {
+                        if (Model.CurrentPage.PageId == page.PageId || Model.CurrentPage.ParentPath.Contains(page.PageId)) {
                             <li class="active"><a href="@page.PageUrl">@page.PageName</a></li>
                         }
-                        else
-                        {
+                        else {
                             <li><a href="@page.PageUrl">@page.PageName</a></li>
                         }
                     }
