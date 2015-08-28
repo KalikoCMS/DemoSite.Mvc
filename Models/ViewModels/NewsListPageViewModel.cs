@@ -1,5 +1,4 @@
 ﻿namespace DemoSite.Models.ViewModels {
-    using System.Collections;
     using System.Collections.Generic;
     using KalikoCMS.Core;
     using PagedList;
@@ -12,8 +11,8 @@
 
         public NewsListPage CurrentPage { get; private set; }
         public IEnumerable<CmsPage> TopMenu { get; set; }
-        public IPagedList<CmsPage> News { get; set; }
-        public IEnumerable<CmsPage> NewsHolders { get; set; }
+        public IPagedList<NewsPage> News { get; set; }
+        public IEnumerable<NewsListPage> NewsHolders { get; set; }
         public int Page { get; set; }
     }
 }
