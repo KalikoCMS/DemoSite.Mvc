@@ -30,8 +30,6 @@
             // Sort on publish start date descending
             newsPages.Sort(SortOrder.StartPublishDate, SortDirection.Descending);
 
-            // TODO: Page the result
-
             // Return all news pages
             return newsPages.Where(x => x.PageTypeId == pageType.PageTypeId).Select(x => x.ConvertToTypedPage<NewsPage>());
         }

@@ -1,4 +1,6 @@
-﻿@model DemoSite.Models.ViewModels.PageViewModel<DemoSite.Models.Pages.ArticlePage>
+﻿@using KalikoCMS
+@using KalikoCMS.Core
+@model DemoSite.Models.ViewModels.PageViewModel<DemoSite.Models.Pages.ArticlePage>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,19 +10,7 @@
 
 <div class="row">
     <div class="left-menu col-lg-3">
-        
-        @* TODO: Implement through MVC <cms:MenuTree ID="LeftMenu" AutoBind="True" runat="server">
-            <startitemtemplate><li></startitemtemplate>
-            <enditemtemplate></li></enditemtemplate>
-            <newleveltemplate><ul class="nav nav-pills nav-stacked"></newleveltemplate>
-            <endleveltemplate></ul></endleveltemplate>
-            <itemtemplate>
-                <a href="<%#Container.CurrentPage.PageUrl %>"><%#Container.CurrentPage.PageName %></a>
-            </itemtemplate>
-            <selecteditemtemplate>
-                <a href="<%#Container.CurrentPage.PageUrl %>" class="active"><%#Container.CurrentPage.PageName %></a>
-            </selecteditemtemplate>
-        </cms:MenuTree>*@
+        @RenderTree(PageFactory.GetPage(Model.CurrentPage.RootId))
     </div>
     <div class="col-lg-9">
         @Model.CurrentPage.TopImage.ToHtml()
@@ -34,3 +24,27 @@
         }
     </div>
 </div>
+
+@* Recursive function that renders all pages in the current branch which is set to be visible in menus *@
+@helper RenderTree(CmsPage page) {
+    <ul class="nav nav-pills nav-stacked">
+        @* Loop through all children *@
+        @foreach (CmsPage child in page.Children)
+        {
+            // Don't show pages that isn't visible in menus
+            if (!child.VisibleInMenu)
+            {
+                continue;
+            }
+            // If child is in current page or is current page, set the class of the node to active
+            <li class="@(Model.CurrentPage.ParentPath.Contains(child.PageId) || Model.CurrentPage.PageId == child.PageId ? "active" : "")">
+                <a href="@child.PageUrl">@child.PageName</a>
+                @if (child.HasChildren)
+                {
+                    // If the child has children of their own, render them
+                    @RenderTree(page)
+                }
+            </li>
+        }
+    </ul>
+}
