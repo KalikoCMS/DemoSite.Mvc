@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="left-menu col-lg-3">
-        @RenderTree(PageFactory.GetPage(Model.CurrentPage.RootId))
+        @RenderTree(PageFactory.GetPage(Model.CurrentPage.RootId), 0)
     </div>
     <div class="col-lg-9">
         @Model.CurrentPage.TopImage.ToHtml()
@@ -26,8 +26,8 @@
 </div>
 
 @* Recursive function that renders all pages in the current branch which is set to be visible in menus *@
-@helper RenderTree(CmsPage page) {
-    <ul class="nav nav-pills nav-stacked">
+@helper RenderTree(CmsPage page, int marginLeft) {
+    <ul class="nav nav-pills nav-stacked" style="margin-left:@(marginLeft)px">
         @* Loop through all children *@
         @foreach (CmsPage child in page.Children)
         {
@@ -36,13 +36,12 @@
             {
                 continue;
             }
-            // If child is in current page or is current page, set the class of the node to active
-            <li class="@(Model.CurrentPage.ParentPath.Contains(child.PageId) || Model.CurrentPage.PageId == child.PageId ? "active" : "")">
+            <li class="@(Model.CurrentPage.PageId == child.PageId ? "active" : "")">
                 <a href="@child.PageUrl">@child.PageName</a>
-                @if (child.HasChildren)
+                @if (child.HasChildren && (Model.CurrentPage.ParentPath.Contains(child.PageId) || Model.CurrentPage.PageId == child.PageId))
                 {
-                    // If the child has children of their own, render them
-                    @RenderTree(page)
+                    // Only expand selected node
+                    @RenderTree(child, 20)
                 }
             </li>
         }
