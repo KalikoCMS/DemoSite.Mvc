@@ -34,5 +34,6 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans Condensed', sans-serif; font-we
 .products li { padding: 5px 10px; border: 3px solid #e0e0e0; border-radius: 8px; margin-bottom: 10px; background: #f4f4f4; }
 .products h2 { margin-top: 0; }
 .left-menu { margin-top: 28px; }
+.left-menu ul ul { margin-left: 20px; }
 
 .tags { background: #f4f4f4; padding: 5px;}
