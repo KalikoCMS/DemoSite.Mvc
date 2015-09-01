@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" MasterPageFile="Base.Master" CodeBehind="Admin.master.cs" Inherits="KalikoCMS.Admin.Templates.MasterPages.Admin" %>
+<%@ Register TagPrefix="admin" TagName="TopNavigation" Src="../Units/TopNavigation.ascx" %>
+<%@ Register TagPrefix="admin" TagName="SideNavigation" Src="../Units/SideNavigation.ascx" %>
+
+
+<asp:Content ContentPlaceHolderID="MainContent" runat="server">
+  <form id="MainForm" runat="server">
+    <admin:SideNavigation runat="server" />
+    <div id="main">
+      <admin:topnavigation runat="server" />
+
+      <div id="content">
+        <asp:ContentPlaceHolder ID="FullRegion" runat="server">
+          <asp:ContentPlaceHolder ID="LeftRegion" runat="server" />
+          <asp:ContentPlaceHolder ID="RightRegion" runat="server" />
+        </asp:ContentPlaceHolder>
+      </div>
+    </div>
+  </form>
+  <div class='notifications top-right'></div>
+  <div id="modal-container"></div>
+</asp:Content>
+
+
+<asp:Content ContentPlaceHolderID="AdditionalScripts" runat="server">
+  <script>
+    var callbackStack = [];
+
+    function registerCallback(callback) {
+      callbackStack.push(callback);
+    }
+
+    function executeCallback(args) {
+      var callback = callbackStack.pop();
+      callback.apply(this, arguments);
+    }
+
+    function abortCallback() {
+      callbackStack.pop();
+    }
+
+    function openModal(url, width, height) {
+      $('<iframe class="modal fade" style="height:' + height + 'px;left:50%" src="' + url + '"></iframe>')
+        .modal({ backdrop: 'static', width: width });
+    }
+
+    function closeModal() {
+      $("iframe.modal:last").modal('hide');
+    }
+  </script>
+</asp:Content>
