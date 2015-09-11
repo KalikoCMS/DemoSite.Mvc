@@ -1,5 +1,6 @@
 ﻿@using KalikoCMS
 @using KalikoCMS.Core
+@using KalikoCMS.Mvc.Extensions
 @model DemoSite.Models.ViewModels.PageViewModel<DemoSite.Models.Pages.ArticlePage>
 
 @{
@@ -10,7 +11,7 @@
 
 <div class="row">
     <div class="left-menu col-lg-3">
-        @RenderTree(PageFactory.GetPage(Model.CurrentPage.RootId))
+        @Html.MenuTreeFor(Model.CurrentPage, PageFactory.GetPage(Model.CurrentPage.RootId), new { @class = "nav nav-pills nav-stacked", selectedItemClass = "active" })
     </div>
     <div class="col-lg-9">
         @Model.CurrentPage.TopImage.ToHtml()
@@ -21,29 +22,6 @@
             <p class="tags">
                 This article was tagged with: <strong>@Model.CurrentPage.Tags</strong>
             </p>
-        }
+        }@Url.Action("savedata")
     </div>
 </div>
-
-@* Recursive function that renders all pages in the current branch which is set to be visible in menus *@
-@helper RenderTree(CmsPage page) {
-    <ul class="nav nav-pills nav-stacked">
-        @* Loop through all children *@
-        @foreach (CmsPage child in page.Children)
-        {
-            // Don't show pages that isn't visible in menus
-            if (!child.VisibleInMenu)
-            {
-                continue;
-            }
-            <li class="@(Model.CurrentPage.PageId == child.PageId ? "active" : "")">
-                <a href="@child.PageUrl">@child.PageName</a>
-                @if (child.HasChildren && (Model.CurrentPage.ParentPath.Contains(child.PageId) || Model.CurrentPage.PageId == child.PageId))
-                {
-                    // Only expand selected node
-                    @RenderTree(child)
-                }
-            </li>
-        }
-    </ul>
-}

@@ -71,20 +71,20 @@
       <HintPath>packages\Kaliko.Logger.1.1.1\lib\Kaliko.Logger.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Admin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.0.0\lib\KalikoCMS.Admin.dll</HintPath>
+    <Reference Include="KalikoCMS.Admin, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.0.1\lib\KalikoCMS.Admin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Engine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.0.0\lib\KalikoCMS.Engine.dll</HintPath>
+    <Reference Include="KalikoCMS.Engine, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.0.1\lib\KalikoCMS.Engine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Identity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Identity.1.0.0\lib\KalikoCMS.Identity.dll</HintPath>
+    <Reference Include="KalikoCMS.Identity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Identity.1.0.1\lib\KalikoCMS.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Mvc.1.0.0\lib\KalikoCMS.Mvc.dll</HintPath>
+    <Reference Include="KalikoCMS.Mvc, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Mvc.1.0.1\lib\KalikoCMS.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="KalikoCMS.Search, Version=3.0.3.4, Culture=neutral, processorArchitecture=MSIL">
@@ -349,8 +349,8 @@
     <Content Include="Files\Images\sample.jpg" />
     <Content Include="Files\Readme.txt" />
     <Content Include="Global.asax" />
-    <Content Include="ImageCache\readme.txt" />
     <Content Include="Business\PropertyTypes\FeaturePropertyEditor.ascx" />
+    <Content Include="ImageCache\readme.txt" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="SetupAdminAccount.aspx" />
@@ -431,6 +431,8 @@
     <Content Include="Views\NewsPage\Index.cshtml" />
     <Content Include="Views\SearchPage\Index.cshtml" />
     <Content Include="Views\Partials\BreadcrumbsView.cshtml" />
+    <Content Include="Views\ProductListPage\Index.cshtml" />
+    <Content Include="Views\ProductListPage\Product.cshtml" />
     <Content Include="Admin\Templates\MasterPages\Base.Master" />
     <Content Include="Admin\Templates\MasterPages\Admin.Master" />
     <Content Include="Admin\Handlers\MarkdownHandler.ashx" />
@@ -463,8 +465,6 @@
     <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.woff" />
     <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.ttf" />
     <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.eot" />
-    <Content Include="Views\ProductListPage\Index.cshtml" />
-    <Content Include="Views\ProductListPage\Product.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
