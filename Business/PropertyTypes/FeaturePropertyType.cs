@@ -1,48 +1,22 @@
 ﻿namespace DemoSite.Business.PropertyTypes {
     using KalikoCMS.Attributes;
-    using KalikoCMS.Core;
-    using KalikoCMS.Serialization;
+    using KalikoCMS.PropertyType;
 
-    [PropertyType("9033A828-B49A-4A19-9C20-0F9BEBBD3273", "Feature", "Feature", "~/Business/PropertyTypes/FeaturePropertyEditor.ascx")]
-    public class FeatureProperty : PropertyData {
-        private int? _cachedHashCode;
+    [PropertyType("9033A828-B49A-4A19-9C20-0F9BEBBD3273", "Feature", "Feature", EditorControl)]
+    public class FeatureProperty : CompositeProperty {
+        [Property("Header")]
+        public StringProperty Header { get; set; }
 
-        public FeatureProperty() { 
-        }
+        [Property("Feature body")]
+        public HtmlProperty Description { get; set; }
 
-        public FeatureProperty(string header, string description, string url) {
-            Header = header;
-            Description = description;
-            Url = url;
-        }
+        [Property("Featured link")]
+        public LinkProperty Url { get; set; }
 
-        public string Header { get; set; }
-        public string Description { get; set; }
-        public string Url { get; set; }
-
-        // Needs to be implemented, displayed when accessing ToString() or preview
-        protected override string StringValue {
-            get { return string.Format("{0}", Header); }
-        }
-
-        // Needs to be implemented, just call DeserializeJson with your type
-        protected override PropertyData DeserializeFromJson(string data) {
-            return JsonSerialization.DeserializeJson<FeatureProperty>(data);
-        }
-        
-        // Needs to be implemented, returns a hash for an instance of this type
-        public override int GetHashCode() {
-            return (int)(_cachedHashCode ?? (_cachedHashCode = CalculateHashCode()));
-        }
-
-        // Include all custom fields so that a correct hash is calculated
-        private int CalculateHashCode() {
-            int hash = JsonSerialization.GetNewHash();
-            hash = JsonSerialization.CombineHashCode(hash, Header);
-            hash = JsonSerialization.CombineHashCode(hash, Description);
-            hash = JsonSerialization.CombineHashCode(hash, Url);
-
-            return hash;
+        // Override Preview with how to render items of this type in lists.
+        // It's also possible to use more complex HTML-layout here if wanted.
+        public override string Preview {
+            get { return Header.Preview; }
         }
     }
 }

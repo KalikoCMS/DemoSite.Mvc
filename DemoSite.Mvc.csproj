@@ -39,8 +39,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AspNet.Identity.DataAccess, Version=2.1.0.6, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\AspNet.Identity.DataAccess.2.1.0.6\lib\AspNet.Identity.DataAccess.dll</HintPath>
+    <Reference Include="AspNet.Identity.DataAccess, Version=2.1.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AspNet.Identity.DataAccess.2.1.0.7\lib\AspNet.Identity.DataAccess.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -71,20 +71,20 @@
       <HintPath>packages\Kaliko.Logger.1.1.1\lib\Kaliko.Logger.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Admin, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.0.1\lib\KalikoCMS.Admin.dll</HintPath>
+    <Reference Include="KalikoCMS.Admin, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.1.0-preview\lib\KalikoCMS.Admin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Engine, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.0.1\lib\KalikoCMS.Engine.dll</HintPath>
+    <Reference Include="KalikoCMS.Engine, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.1.0-preview\lib\KalikoCMS.Engine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Identity, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Identity.1.0.1\lib\KalikoCMS.Identity.dll</HintPath>
+    <Reference Include="KalikoCMS.Identity, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Identity.1.1.0-preview\lib\KalikoCMS.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Mvc, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Mvc.1.0.1\lib\KalikoCMS.Mvc.dll</HintPath>
+    <Reference Include="KalikoCMS.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Mvc.1.1.0-preview\lib\KalikoCMS.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="KalikoCMS.Search, Version=3.0.3.4, Culture=neutral, processorArchitecture=MSIL">
@@ -307,6 +307,7 @@
     <Content Include="Admin\Content\PropertyType\BooleanPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\CollectionPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\CollectionPropertyEditor.js" />
+    <Content Include="Admin\Content\PropertyType\CompositePropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\DateTimePropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\FilePropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\FilePropertyEditor.js" />
@@ -349,7 +350,6 @@
     <Content Include="Files\Images\sample.jpg" />
     <Content Include="Files\Readme.txt" />
     <Content Include="Global.asax" />
-    <Content Include="Business\PropertyTypes\FeaturePropertyEditor.ascx" />
     <Content Include="ImageCache\readme.txt" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -408,13 +408,6 @@
     <Compile Include="Models\ViewModels\NewsListPageViewModel.cs" />
     <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Business\PropertyTypes\FeaturePropertyEditor.ascx.cs">
-      <DependentUpon>FeaturePropertyEditor.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Business\PropertyTypes\FeaturePropertyEditor.ascx.designer.cs">
-      <DependentUpon>FeaturePropertyEditor.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Business\PropertyTypes\FeaturePropertyType.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
