@@ -71,20 +71,20 @@
       <HintPath>packages\Kaliko.Logger.1.1.1\lib\Kaliko.Logger.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Admin, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.1.0\lib\KalikoCMS.Admin.dll</HintPath>
+    <Reference Include="KalikoCMS.Admin, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.1.1\lib\KalikoCMS.Admin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Engine, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.1.0\lib\KalikoCMS.Engine.dll</HintPath>
+    <Reference Include="KalikoCMS.Engine, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.1.1\lib\KalikoCMS.Engine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Identity, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Identity.1.1.0\lib\KalikoCMS.Identity.dll</HintPath>
+    <Reference Include="KalikoCMS.Identity, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Identity.1.1.1\lib\KalikoCMS.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Mvc.1.1.0\lib\KalikoCMS.Mvc.dll</HintPath>
+    <Reference Include="KalikoCMS.Mvc, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Mvc.1.1.1\lib\KalikoCMS.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="KalikoCMS.Search, Version=3.0.3.4, Culture=neutral, processorArchitecture=MSIL">
