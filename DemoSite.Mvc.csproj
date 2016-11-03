@@ -63,28 +63,28 @@
       <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Kaliko.ImageLibrary, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\ImageLibrary.2.0.5\lib\net45\Kaliko.ImageLibrary.dll</HintPath>
+    <Reference Include="Kaliko.ImageLibrary, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ImageLibrary.3.0.0\lib\net45\Kaliko.ImageLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Kaliko.Logger, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Kaliko.Logger.1.1.1\lib\Kaliko.Logger.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Admin, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.1.1\lib\KalikoCMS.Admin.dll</HintPath>
+    <Reference Include="KalikoCMS.Admin, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.2.0\lib\KalikoCMS.Admin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Engine, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Core.1.1.1\lib\KalikoCMS.Engine.dll</HintPath>
+    <Reference Include="KalikoCMS.Engine, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Core.1.2.0\lib\KalikoCMS.Engine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Identity, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Identity.1.1.1\lib\KalikoCMS.Identity.dll</HintPath>
+    <Reference Include="KalikoCMS.Identity, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Identity.1.2.0\lib\KalikoCMS.Identity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KalikoCMS.Mvc, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KalikoCMS.Mvc.1.1.1\lib\KalikoCMS.Mvc.dll</HintPath>
+    <Reference Include="KalikoCMS.Mvc, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\KalikoCMS.Mvc.1.2.0\lib\KalikoCMS.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="KalikoCMS.Search, Version=3.0.3.4, Culture=neutral, processorArchitecture=MSIL">
@@ -261,27 +261,13 @@
     <Content Include="Admin\Assets\js\kalikocms.admin.taginput.min.js" />
     <Content Include="Admin\Assets\themes\dakota\theme.js" />
     <Content Include="Admin\Assets\themes\dakota\theme.min.css" />
+    <Content Include="Admin\Assets\vendors\bootstrap-markdown\js\bootstrap-markdown.customization.js" />
     <Content Include="Admin\Assets\vendors\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Admin\Assets\vendors\html5shiv.min.js" />
     <Content Include="Admin\Assets\vendors\jquery\css\jquery.fileupload-ui.css" />
     <Content Include="Admin\Assets\vendors\jquery\css\jquery.jcrop.min.css" />
+    <Content Include="Admin\Assets\vendors\jquery\css\selectric.css" />
     <Content Include="Admin\Assets\vendors\jquery\js\jquery-1.10.2.min.js" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-cool.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-cry.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-frown.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-smile.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-wink.gif" />
-    <Content Include="Admin\Assets\vendors\tinymce\plugins\emoticons\img\smiley-yell.gif" />
     <Content Include="Admin\Assets\vendors\tinymce\plugins\visualblocks\css\visualblocks.css" />
     <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\content.inline.min.css" />
     <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\content.min.css" />
@@ -303,6 +289,7 @@
     <Content Include="Admin\Content\Dialogs\SelectPageDialog.aspx" />
     <Content Include="Admin\Content\Dialogs\SelectPagetypeDialog.aspx" />
     <Content Include="Admin\Content\EditPage.aspx" />
+    <Content Include="Admin\Content\EditSite.aspx" />
     <Content Include="Admin\Content\PageTree\PageTreeControl.ascx" />
     <Content Include="Admin\Content\PropertyType\BooleanPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\CollectionPropertyEditor.ascx" />
@@ -320,6 +307,7 @@
     <Content Include="Admin\Content\PropertyType\NumericPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\PageLinkPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\PageLinkPropertyEditor.js" />
+    <Content Include="Admin\Content\PropertyType\SelectorPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\StringPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\TagPropertyEditor.ascx" />
     <Content Include="Admin\Content\PropertyType\TextPropertyEditor.ascx" />
@@ -394,12 +382,14 @@
     <Compile Include="Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DemoSite.cs" />
     <Compile Include="Models\Pages\ArticlePage.cs" />
     <Compile Include="Models\Pages\NewsListPage.cs" />
     <Compile Include="Models\Pages\NewsPage.cs" />
     <Compile Include="Models\Pages\ProductListPage.cs" />
     <Compile Include="Models\Pages\SearchPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
+    <Compile Include="Models\TabGroups.cs" />
     <Compile Include="Models\ViewModels\SearchPageViewModel.cs" />
     <Compile Include="Models\ViewModels\StartPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductListPageViewModel.cs" />
@@ -430,6 +420,7 @@
     <Content Include="Admin\Templates\MasterPages\Admin.Master" />
     <Content Include="Admin\Handlers\MarkdownHandler.ashx" />
     <Content Include="Admin\Handlers\FileHandler.ashx" />
+    <Content Include="Admin\Handlers\Base64Handler.ashx" />
     <Content Include="Admin\Content\PageTree\JQueryTreeContent.ashx" />
     <Content Include="Admin\Content\Dialogs\Dialog.Master" />
     <Content Include="Admin\Assets\vendors\tinymce\skins\lightgray\fonts\tinymce-small.woff" />

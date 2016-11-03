@@ -1,5 +1,6 @@
 ﻿namespace DemoSite.Models.ViewModels {
     using System.Collections.Generic;
+    using KalikoCMS;
     using KalikoCMS.Core;
     using Pages;
 
@@ -7,9 +8,11 @@
         public StartPageViewModel(StartPage currentPage)
         {
             CurrentPage = currentPage;
+            CurrentSite = SiteFactory.CurrentSite<DemoSite>();
         }
 
         public StartPage CurrentPage { get; private set; }
+        public DemoSite CurrentSite { get; private set; }
         public IEnumerable<CmsPage> TopMenu { get; set; }
         public IEnumerable<CmsPage> LatestNews { get; set; }
     }

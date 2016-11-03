@@ -13,13 +13,13 @@
         /// <summary>
         /// A collection of 0..n of our custom FeatureProperty type
         /// </summary>
-        [Property("Main feature slides")]
+        [Property("Main feature slides", TabGroup = TabGroups.Slider)]
         public virtual CollectionProperty<FeatureProperty> Slides { get; set; }
 
-        [Property("Main feature")]
+        [Property("Main feature", TabGroup = TabGroups.Features)]
         public virtual FeatureProperty MainFeature { get; set; }
 
-        [Property("Secondary feature")]
+        [Property("Secondary feature", TabGroup = TabGroups.Features)]
         public virtual FeatureProperty SecondaryFeature { get; set; }
     }
 }
