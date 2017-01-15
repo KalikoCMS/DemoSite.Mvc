@@ -27,12 +27,14 @@
                 </div>
                 <div class="navbar-form navbar-right navbar-search" role="search">
                     <div class="form-group">
-                        <div class="input-group">
-                            <input id="search-field" type="text" placeholder="Search" class="form-control">
-                            <span class="input-group-btn">
-                                <button id="search-button" type="button" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
+                        <form action="/search" method="get">
+                            <div class="input-group">
+                                <input name="q" type="text" placeholder="Search" class="form-control">
+                                <span class="input-group-btn">
+                                <button id="search-button" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i></button>
                             </span>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -58,24 +60,7 @@
             <p>&copy; @DateTime.Today.Year @Model.CurrentSite.CompanyName</p>
         </footer>
     </div>
-
-    <script>
-    $(document).ready(function () {
-      $('#search-button').click(doSearch);
-      $('#search-field').keypress(function (event) {
-        var keycode = (event.keyCode ? event.keyCode : event.which);
-        if (keycode == '13') {
-          doSearch();
-          return false;
-        }
-      });
-
-      function doSearch() {
-        document.location.href = "/search/?q=" + escape($('#search-field').val());
-      }
-    });
-    </script>
-
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>

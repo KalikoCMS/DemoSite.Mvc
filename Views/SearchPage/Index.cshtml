@@ -9,12 +9,14 @@
 
 <div class="row">
     <div class="col-lg-6 col-lg-push-3">
-        <div id="searchfield" class="input-group">
-            @Html.TextBox("query", Model.Query, new { @class = "form-control" })
-            <span class="input-group-btn">
-                <button id="searchButton" class="btn btn-primary" type="button"><i class="glyphicon glyphicon-search"></i> Search</button>
+        @using (Html.BeginForm(null, null, FormMethod.Get)) {
+            <div id="searchfield" class="input-group">
+                @Html.TextBox("q", Model.Query, new {@class = "form-control"})
+                <span class="input-group-btn">
+                <button id="searchButton" class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i> Search</button>
             </span>
-        </div>
+            </div>
+        }
     </div>
 </div>
 
@@ -47,24 +49,3 @@
         }
     }
 </div>
-
-<script>
-    $(document).ready(function () {
-        $("#searchButton").click(doSearch);
-
-        $('#query').keypress(function (event) {
-
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            if (keycode == '13') {
-                doSearch();
-                return false;
-            }
-        });
-
-        function doSearch() {
-            var query = $("#query").val();
-            var url = document.location.pathname + "?q=" + escape(query);
-            document.location = url;
-        };
-    });
-</script>
