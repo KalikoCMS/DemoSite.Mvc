@@ -1,0 +1,20 @@
+﻿@using KalikoCMS
+@using KalikoCMS.Mvc.Extensions
+@model DemoSite.Models.ViewModels.ContactPageViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/BreadCrumbsView.cshtml", Model)
+
+<div class="row">
+    <div class="left-menu col-lg-3">
+        @Html.MenuTreeFor(Model.CurrentPage, PageFactory.GetPage(Model.CurrentPage.RootId), new { @class = "nav nav-pills nav-stacked", selectedItemClass = "active" })
+    </div>
+    <div class="col-lg-6">
+        <h1>@Model.CurrentPage.Headline</h1>
+        @Model.CurrentPage.ThankYouMessage
+        <p><a href="@Model.CurrentPage.PageUrl">Send another message</a></p>
+    </div>
+</div>

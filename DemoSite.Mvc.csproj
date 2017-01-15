@@ -353,6 +353,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Business\FakeStore\FakeProductDatabase.cs" />
     <Compile Include="Business\FakeStore\Product.cs" />
+    <Compile Include="Business\ViewModelBuilders\ContactPageViewModelBuilder.cs" />
     <Compile Include="Business\ViewModelBuilders\SearchPageViewModelBuilder.cs" />
     <Compile Include="Business\ViewModelBuilders\StartPageViewModelBuilder.cs" />
     <Compile Include="Business\ViewModelBuilders\NewsListPageViewModelBuilder.cs" />
@@ -360,6 +361,7 @@
     <Compile Include="Business\ViewModelBuilders\PageViewModelBuilder.cs" />
     <Compile Include="Business\ViewModelBuilders\NewsPageViewModelBuilder.cs" />
     <Compile Include="Controllers\ArticlePageController.cs" />
+    <Compile Include="Controllers\ContactPageController.cs" />
     <Compile Include="Controllers\NewsListPageController.cs" />
     <Compile Include="Controllers\NewsPageController.cs" />
     <Compile Include="Controllers\ProductListPageController.cs" />
@@ -384,12 +386,14 @@
     </Compile>
     <Compile Include="Models\DemoSite.cs" />
     <Compile Include="Models\Pages\ArticlePage.cs" />
+    <Compile Include="Models\Pages\ContactPage.cs" />
     <Compile Include="Models\Pages\NewsListPage.cs" />
     <Compile Include="Models\Pages\NewsPage.cs" />
     <Compile Include="Models\Pages\ProductListPage.cs" />
     <Compile Include="Models\Pages\SearchPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Models\TabGroups.cs" />
+    <Compile Include="Models\ViewModels\ContactPageViewModel.cs" />
     <Compile Include="Models\ViewModels\SearchPageViewModel.cs" />
     <Compile Include="Models\ViewModels\StartPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductListPageViewModel.cs" />
@@ -449,6 +453,8 @@
     <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.woff" />
     <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.ttf" />
     <Content Include="Admin\Assets\fonts\hind\hind-bold-webfont.eot" />
+    <Content Include="Views\ContactPage\Index.cshtml" />
+    <Content Include="Views\ContactPage\ThankYou.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
