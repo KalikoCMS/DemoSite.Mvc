@@ -8,5 +8,8 @@
     public class DemoSite : CmsSite {
         [Property("Company name")]
         public virtual StringProperty CompanyName { get; set; }
+
+        [Property("Search page")]
+        public virtual PageLinkProperty SearchPage { get; set; }
     }
 }
