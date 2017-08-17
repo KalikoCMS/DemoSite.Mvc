@@ -13,10 +13,11 @@ namespace DemoSite {
             var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
             
             // Allow sign in by email.
-            var userName = signinManager.UserManager.FindByEmailAsync(Email.Text).Result.UserName;
-            if (userName == null)
+            var userName = Email.Text;
+            var user = signinManager.UserManager.FindByEmailAsync(Email.Text).Result;
+            if (user != null)
             {
-                userName = Email.Text;
+                userName = user.UserName;
             }
 
             // This doesn't count login failures towards account lockout
