@@ -11,10 +11,18 @@ namespace DemoSite {
             }
 
             var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+            
+            // Allow sign in by email.
+            var userName = Email.Text;
+            var user = signinManager.UserManager.FindByEmailAsync(Email.Text).Result;
+            if (user != null)
+            {
+                userName = user.UserName;
+            }
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger lockout, change to shouldLockout: true
-            var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+            var result = signinManager.PasswordSignIn(userName, Password.Text, RememberMe.Checked, shouldLockout: false);
 
             switch (result) {
                 case SignInStatus.Success:
